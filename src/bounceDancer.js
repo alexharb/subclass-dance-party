@@ -1,6 +1,5 @@
 var makeBounceDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, limitTimeBounce(timeBetweenSteps));
-  this.time = timeBetweenSteps;
   this.$node.attr('id', 'bounceDancer');
   this.$node.append('<img src="res/marioPeace.png" height="144" width="87" />');
 };

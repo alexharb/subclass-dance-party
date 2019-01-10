@@ -1,7 +1,5 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-
-  this.time = timeBetweenSteps;
   //$(element).attr('id', 'newID');
   this.$node.attr('id', 'blinkyDancer');
   this.$node.append('<img src="res/boo.png" height="72" width="72" />');
