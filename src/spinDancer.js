@@ -15,8 +15,8 @@ makeSpinDancer.prototype.step = function() {
   // other effects you can use on a jQuery-wrapped html tag.
   var rotation = function() {
     this.$node.rotate({
-      angle:0,
-      animateTo:360,
+      angle: 0,
+      animateTo: 360,
       callback: rotation
     });
   };
@@ -31,4 +31,4 @@ var limitTime = function limitTime(time) {
   } else {
     return time;
   }
-}
+};
