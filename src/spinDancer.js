@@ -1,6 +1,6 @@
 var makeSpinDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, limitTimeSpin(timeBetweenSteps));
-    this.$node.attr('id', 'spinDancer');
+  this.$node.attr('id', 'spinDancer');
   this.$node.append('<img src="res/peach.png" height="127" width="91" />');
 };
 
@@ -24,7 +24,6 @@ makeSpinDancer.prototype.step = function() {
 
 
 var limitTimeSpin = function(time) {
-  console.log(time);
   if (time < 150) {
     return 150;
   } else if (time > 850) {

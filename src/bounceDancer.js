@@ -18,6 +18,6 @@ makeBounceDancer.prototype.step = function() {
 };
 
 
-var limitTimeBounce = function limitTime(time) {
+var limitTimeBounce = function (time) {
   return time + 1000;
 };
