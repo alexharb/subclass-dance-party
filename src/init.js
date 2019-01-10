@@ -27,6 +27,19 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer.$node);
+  });
+  
+  $('.lineUpButton').on('click', function(event) {
+    var currentHeight = 50;
+    window.dancers.forEach(function(dancer) {
+      var styleSettings = {
+        top: currentHeight,
+        left: 20
+      };
+      dancer.css(styleSettings);
+      currentHeight += dancer.height() + 10;
+    });
   });
 });
 

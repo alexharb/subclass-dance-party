@@ -1,8 +1,9 @@
 var makeSpinDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, limitTime(timeBetweenSteps));
+  makeDancer.call(this, top, left, limitTimeSpin(timeBetweenSteps));
+  
   //this.time = timeBetweenSteps;
   this.$node.attr('id', 'spinDancer');
-  this.$node.append('<img src="res/dancingQueen.png" />');
+  this.$node.append('<img src="res/peach.png" height="127" width="91" />');
 };
 
 makeSpinDancer.prototype = Object.create(makeDancer.prototype);
@@ -16,8 +17,7 @@ makeSpinDancer.prototype.step = function() {
   var rotation = function() {
     this.$node.rotate({
       angle: 0,
-      animateTo: 360,
-      callback: rotation
+      animateTo: 360
     });
   };
   rotation.call(this);
@@ -25,9 +25,12 @@ makeSpinDancer.prototype.step = function() {
 };
 
 
-var limitTime = function limitTime(time) {
-  if (time < 500) {
-    return 500;
+var limitTimeSpin = function(time) {
+  console.log(time);
+  if (time < 150) {
+    return 150;
+  } else if (time > 850) {
+    return time * 1.25;
   } else {
     return time;
   }

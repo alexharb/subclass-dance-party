@@ -1,8 +1,8 @@
 var makeBounceDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, limitTime(timeBetweenSteps));
+  makeDancer.call(this, top, left, limitTimeBounce(timeBetweenSteps));
   this.time = timeBetweenSteps;
   this.$node.attr('id', 'bounceDancer');
-  this.$node.append('<img src="res/dancingQueen.png" />');
+  this.$node.append('<img src="res/marioPeace.png" height="144" width="87" />');
 };
 
 makeBounceDancer.prototype = Object.create(makeDancer.prototype);
@@ -19,6 +19,6 @@ makeBounceDancer.prototype.step = function() {
 };
 
 
-var limitTime = function limitTime(time) {
+var limitTimeBounce = function limitTime(time) {
   return time + 1000;
 };
