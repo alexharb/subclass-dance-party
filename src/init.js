@@ -1,7 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
-
-
+  
   $('.addDancerButton').on('click', function(event) {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
     var dancerMakerFunction = window[dancerMakerFunctionName];
@@ -27,5 +26,19 @@ $(document).ready(function() {
     });
   });
   
+  
+  $('#interactiveDancer').mouseenter(function(event) {
+    console.log('mouseenter event');
+  });
+
 });
 
+
+/// remove:
+
+
+/*var removeInteractiveDancer = function (theDancer) {
+  console.log('interactive dancer mouseover');
+  console.log(theDancer);
+  theDancer.addClass('animated bounceOutDown');
+};*/

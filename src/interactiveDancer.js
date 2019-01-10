@@ -1,8 +1,7 @@
 var makeInteractiveDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.attr('id', 'interactiveDancer');
-  this.$node.attr('onmouseenter', 'removeInteractiveDancer(this)');
-  this.$node.append('<img src="res/bowser.png" height="162" width="204" />');
+  this.$node.append('<img id="interactiveDancer" src="res/bowser.png" height="162" width="204" />');
 };
 
 makeInteractiveDancer.prototype = Object.create(makeDancer.prototype);
@@ -16,12 +15,5 @@ makeInteractiveDancer.prototype.step = function() {
 
   this.$node.addClass('animated tada infinite');
   makeDancer.prototype.step.call(this);
-  
-};
-
-var removeInteractiveDancer = function (theDancer) {
-  console.log('interactive dancer mouseover');
-  console.log(theDancer);
-  theDancer.addClass('animated bounceOutDown');
 };
 
