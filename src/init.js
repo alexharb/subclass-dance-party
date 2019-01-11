@@ -29,9 +29,33 @@ $(document).ready(function() {
   
   //<a href="#" class="pairUpButton" data-dancer-make-pair-up="makePairUp">make the dancers pair up</a>
   $('.pairUpButton').on('click', function() {
-    var pairUp = window.dancers;
-    for (let i = 0; i < window.dancers.length; i +=2) {
+    var pairUp = window.dancers.slice(0);
+    for (let i = 0; i < window.dancers.length; i += 2) {
+      var left = $('body').height() * Math.random();
+      var top = $('body').height() * Math.random();
+      //debugger;
+      var partner = Math.floor(Math.random() * (pairUp.length));
+      var right = pairUp[partner];
+      pairUp.splice(partner, 1);
       
+      var styleSettings = {
+        top: top,
+        left: left
+      };
+      right.css(styleSettings);
+      
+      if (pairUp.length > 0) {    
+        left += right.width();
+        partner = Math.floor(Math.random() * (pairUp.length));
+        right = pairUp[partner];
+        pairUp.splice(partner, 1);
+        
+        styleSettings = {
+          top: top,
+          left: left
+        };
+        right.css(styleSettings); 
+      }
     }
   });
   
