@@ -33,7 +33,6 @@ $(document).ready(function() {
     for (let i = 0; i < window.dancers.length; i += 2) {
       var left = $('body').height() * Math.random();
       var top = $('body').height() * Math.random();
-      //debugger;
       var partner = Math.floor(Math.random() * (pairUp.length));
       var right = pairUp[partner];
       pairUp.splice(partner, 1);
@@ -57,26 +56,36 @@ $(document).ready(function() {
         right.css(styleSettings); 
       }
     }
+    
+
+    
   });
   
-  /*
-  button
-  on click, do stuff
-  make copy of dancers
-  over each iteration, generate two random numbers within the array and slice them out
-  generate a random location for first one
-  second one would be to the right of it
-  
-  */
 
 });
 
 
-/// remove:
+var randomColor = function() {
+  var colors = ['red', 'orange', 'green', 'yellow', 'indigo', 'violet'];
+  var choice = Math.round(Math.random() * colors.length);
+  var styleSettings = {
+    color: colors[choice]
+  };
+  $('.title').css(styleSettings);
+  setTimeout(randomColor, 100);    
+};
+    
+var randomBackgroundColor = function() {
+  var colors = ['red', 'orange', 'green', 'yellow', 'indigo', 'violet'];
+  var choice = Math.round(Math.random() * colors.length);
+  var styleSettings = {
+    background: colors[choice]
+  };
+  $('.title').css(styleSettings);
+  setTimeout(randomBackgroundColor, 100);    
+};  
+  
+$('.title').load(randomColor());
+$('.title').load(randomBackgroundColor());
 
 
-/*var removeInteractiveDancer = function (theDancer) {
-  console.log('interactive dancer mouseover');
-  console.log(theDancer);
-  theDancer.addClass('animated bounceOutDown');
-};*/

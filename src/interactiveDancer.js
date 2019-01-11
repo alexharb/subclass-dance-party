@@ -31,4 +31,5 @@ makeInteractiveDancer.prototype.fall = function() {
   };
   var boundedDeleteDancer = deleteDancer.bind(this);
   setTimeout(boundedDeleteDancer, 1000);
+  window.dancers.splice(window.dancers.indexOf(this.$node), 1);
 };
